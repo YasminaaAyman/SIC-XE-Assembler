@@ -276,9 +276,7 @@ public class SICXEAssembler {
                 printInRecord.println(tLine);
                 printInRecord.print("T"+"\t");
                 startAddLine = lastAddLine;
-                listingLine = "";
-                System.out.println(LOCCTR(inputLine)+"\t"+label2(inputLine)+"\t"+opcode2(inputLine)+"\t"+operand2(inputLine));
-            }
+                listingLine = "";}
             else if((opcode2(inputLine).equals("RESW") || opcode2(inputLine).equals("RESB"))){
                 lastAddLine = form6(LOCCTR(inputLine));
                 lengthRecordLine = Integer.toHexString(Integer.parseInt(lastAddLine, 16)-Integer.parseInt(startAddLine, 16));
@@ -295,7 +293,6 @@ public class SICXEAssembler {
                 printInRecord.print("T"+"\t");
                 startAddLine = lastAddLine;
                 listingLine = "";
-                System.out.println("**********"+LOCCTR(inputLine)+"\t"+label2(inputLine)+"\t"+opcode2(inputLine)+"\t"+operand2(inputLine));
             } 
             else if (scanInput.hasNextLine()){
                 inputLine = scanInput.nextLine();
@@ -306,7 +303,6 @@ public class SICXEAssembler {
                     lengthRecordLine = form2(lengthRecordLine);
                     tLine = startAddLine+lengthRecordLine+listingLine;
                 }
-                System.out.println("^^^^^^^^^^^^^^^"+LOCCTR(inputLine)+"\t"+label2(inputLine)+"\t"+opcode2(inputLine)+"\t"+operand2(inputLine));
             }
         }
         printInRecord.println(tLine);
